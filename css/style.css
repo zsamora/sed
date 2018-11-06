@@ -1,0 +1,170 @@
+/*Fondo*/
+body {
+	background-color: #2d5986; /*Color de Fondo*/
+}
+/*        index.php						*/
+/* Texto de bienvenida */
+#initial-text {
+	color:white;
+	text-align:center;
+}
+/* Cuadro de login */
+.form-login{
+	background-color: rgba(0,0,0,0.5);
+	text-align:center;
+	margin: 0 auto;
+	max-width: 500px;
+	padding: 15px 29px 15px 29px;
+	border: 2px solid white;
+	border-radius: 10px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-weight:lighter;
+}
+/* Texto del cuadro de login */
+#text-loginbox {
+	color:white;
+	text-align:center;
+}
+/*Inputs del cuadro de login*/
+.form-login input[type="text"],
+.form-login input[type="password"]{
+    font-size: 16px;
+    height: 45px;
+    padding: 7px 9px;
+}
+/*		navbar.php    */
+/* Color de barra */
+.navbar {
+	background-color: #0C1D46;
+}
+/* Color de textos */
+.navbar-default .navbar-brand {
+    color: white;
+		padding-left: 20px;
+}
+/* Color cuando el mouse está encima */
+.navbar-default:hover .navbar-brand:hover {
+	color:#B11928;
+}
+/*		sessionbar.php    */
+.dropdown-toggle {
+	color: white;
+}
+.dropdown-toggle:hover {
+	color: black;
+}
+/*			advertencias pop-up (alert)     */
+.alert {
+	border: 2px solid #610B0B;
+	color: white;
+	background-color: #B40404;
+}
+/*			tablas     */
+table {
+	background-color: white;
+	border: 2px solid black;
+}
+th {
+	color:black;/*#8A0808;*/
+	text-align:center;
+	border: 2px solid black;
+	background-color: lightblue;
+}
+td {
+	color:black;
+	text-align:center;
+	font-weight: bold;
+	border: 2px solid black;
+}
+thead, tbody {
+	border: 2px solid black;
+}
+/* Titulos en general */
+h2 {
+	color:white;
+	text-align: center;
+}
+/* Titulo cuadro general de Meta */
+.titulo-meta {
+	background-color:rgba(255, 255, 0, 0.8);
+}
+/* Titulo cuadro general de Competencia */
+.titulo-comp {
+	/*background-color:rgba(0, 153, 255, 0.8);*/
+	background-color:rgba(255, 14, 44, 0.8);
+}
+/* Titulo cuadro general de General */
+.titulo-gen {
+	background-color:rgba(0, 203, 71, 0.8);
+}
+/* Cuadro Meta N°*/
+.meta {
+	color:black;
+	background-color: rgba(255,255,0,0.8);
+	text-align: center;
+	font-weight: bold;
+	border: 2px solid black;
+	padding: 0.5cm;
+}
+/* Cuadro Competencia N°*/
+.comp {
+	color:white;
+	background-color: rgba(255, 14, 44, 0.6);
+	text-align: center;
+	font-weight: bold;
+	border: 2px solid black;
+	padding: 0.5cm;
+}
+/* Cuadro Total Metas */
+.total {
+	color:white;
+	background-color: rgba(0,0,0,0.6);
+	text-align: center;
+	font-weight: bold;
+	border: 2px solid lightblue;
+	padding: 0.5cm;
+}
+#name_bar{
+	font-family: "Arial", Times, serif;
+}
+#btn-submit{
+	height:45px;
+}
+/*
+	Evaluaciones
+*/
+input[type="radio"],
+input[type="checkbox"]{
+	display:none;
+}
+#select:hover{
+  background-color: #D8D8D8;
+}
+#desc{
+	background-color: #6FA3A9;
+}
+/* Criterio N° */
+.criterio {
+  width: 50%;
+  font-weight: bold;
+	color: white;
+	font-size: 18px;
+}
+.descripcion {
+  width: 50%;
+	color: white;
+	font-size: 17px;
+}
+/* Tabla detalle de resultados criterios */
+.detalle {
+	position:absolute;
+  right:30px;
+  top: 0px;
+}
+.container-relative {
+	position:relative;
+}
+.evaluado, .evaluador {
+	width: 50%;
+	background-color: red;
+}
