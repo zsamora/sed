@@ -9,9 +9,8 @@ $app=$_POST["app_form"];
 $apm=$_POST["apm_form"];
 $email=$_POST["email_form"];
 //TODO: ARREGLAR INYECCIONES Y ENVIAR MENSAJE DE SUCCESS
-$agregar = "INSERT INTO usuarios (`id`,`username`, `password`, `rut`, `nombre`, `apellidop`, `apellidom`, `email`)
-                          SELECT COUNT(*) + 1 ,'$user', '$pass', '$rut', '$nombre', '$app', '$apm', '$email'
-                            FROM usuarios";
+$agregar = "INSERT INTO usuarios (`username`, `password`, `rut`, `nombre`, `apellidop`, `apellidom`, `email`)
+                          VALUES ('$user', '$pass', '$rut', '$nombre', '$app', '$apm', '$email')";
 if ($conn->query($agregar) === TRUE) {
   header("Location: usuarios.php");
 } else {

@@ -4,8 +4,7 @@ $cargo=$_POST["cargo"];
 $perfil=$_POST["perf"];
 //TODO: ARREGLAR INYECCIONES Y ENVIAR MENSAJE DE SUCCESS
 $agregar = "INSERT INTO cargos (`nombre`,`perfil_id`)
-                          SELECT '$cargo', $perfil
-                            FROM cargos";
+                          VALUES('$cargo', $perfil)";
 if ($conn->query($agregar) === TRUE) {
   header("Location: cargos.php");
 } else {

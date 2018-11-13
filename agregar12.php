@@ -8,9 +8,8 @@ $esperado=$_POST["esperado"];
 $sobre_esperado=$_POST["sobre_esperado"];
 $ponderacion=$_POST["ponderacion"];
 //TODO: ARREGLAR INYECCIONES Y ENVIAR MENSAJE DE SUCCESS
-$agregar = "INSERT INTO indicadores (`id`,`meta_id`,`descripcion`,`minimo`,`no_cumplido`,`esperado`,`sobre_esperado`,`ponderacion`)
-                 SELECT COUNT(*) + 1, $meta,'$descripcion','$minimo','$no_cumplido','$esperado','$sobre_esperado',$ponderacion
-                   FROM indicadores";
+$agregar = "INSERT INTO indicadores (`meta_id`,`descripcion`,`minimo`,`no_cumplido`,`esperado`,`sobre_esperado`,`ponderacion`)
+                 VALUES ($meta,'$descripcion','$minimo','$no_cumplido','$esperado','$sobre_esperado',$ponderacion)";
 if ($conn->query($agregar) === TRUE) {
   header("Location: indicadores.php");
 } else {

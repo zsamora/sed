@@ -7,9 +7,8 @@ $desarrollado=$_POST["desarrollado"];
 $superior=$_POST["superior"];
 $ponderacion=$_POST["ponderacion"];
 //TODO: ARREGLAR INYECCIONES Y ENVIAR MENSAJE DE SUCCESS
-$agregar = "INSERT INTO criterios (`id`,`descripcion`,`minimo`,`en_desarrollo`,`desarrollado`,`superior`,`ponderacion`)
-                          SELECT COUNT(*) + 1, '$descripcion','$minimo','$en_desarrollo','$desarrollado','$superior',$ponderacion
-                          FROM criterios";
+$agregar = "INSERT INTO criterios (`descripcion`,`minimo`,`en_desarrollo`,`desarrollado`,`superior`,`ponderacion`)
+                          VALUES('$descripcion','$minimo','$en_desarrollo','$desarrollado','$superior',$ponderacion)";
 if ($conn->query($agregar) === TRUE) {
   header("Location: criterios.php");
 } else {
