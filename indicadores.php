@@ -74,7 +74,7 @@ include('navbar.php');
 <?php
 $indicadores = "SELECT *
  									FROM indicadores
-							ORDER BY meta_id ,id";
+							ORDER BY id, meta_id";
 $ind_result = $conn->query($indicadores) or die ("database error:".$conn->error);
 ?>
 <div>

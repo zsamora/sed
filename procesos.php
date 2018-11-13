@@ -289,7 +289,7 @@ $proc_result = $conn->query($procesos) or die ("database error:".$conn->error);
 												FROM proc_comp, competencias, procesos
 											 WHERE proc_comp.competencia_id = competencias.id
 											 	 AND proc_comp.proceso_id = procesos.id
-										ORDER BY competencia_id";
+										ORDER BY proceso_id DESC, competencia_id";
 			$result = $conn->query($comp_perfil) or die("database error:". $conn->error);
 			while ($fila = $result->fetch_assoc()){
 			?>
@@ -373,7 +373,7 @@ $proc_result = $conn->query($procesos) or die ("database error:".$conn->error);
 												FROM proc_ind, indicadores, procesos
 											 WHERE proc_ind.indicador_id = indicadores.id
 											 	 AND proc_ind.proceso_id = procesos.id
-									  ORDER BY indicador_id";
+									  ORDER BY proceso_id DESC, indicador_id";
 			$result = $conn->query($proc_ind) or die("database error:". $conn->error);
 			while ($fila = $result->fetch_assoc()){
 			?>
