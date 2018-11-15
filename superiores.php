@@ -163,7 +163,7 @@ include('navbar.php');
 	                      FROM superiores_id, usuarios u1, usuarios u2
 	                      WHERE u1.id = superiores_id.usuario_id
 													AND u2.id = superiores_id.superior_id
-										 ORDER BY sup_ap";
+										 ORDER BY u_ap";
 	         $usuarios_result = $conn->query($usuarios) or die("database error:". $conn->error);
 	         while($fila_usuarios = $usuarios_result->fetch_assoc()) { ?>
 	           <tr>
