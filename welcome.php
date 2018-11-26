@@ -34,9 +34,13 @@ include('navbar.php');
 		<tbody>
 <?php while($fila = $proc_result->fetch_assoc()){
 		echo "<tr>";
-		if ($fila["habilitado"] || $_SESSION['id'] == 1 || $_SESSION['id'] == 0) {
+		if ($fila["habilitado"] == 1 || $_SESSION['id'] == 1 || $_SESSION['id'] == 0) {
 				echo "<td><a href='proceso.php?proceso_id=".$fila['id']."'>". $fila["nombre"] ."</a></td>";
 				echo "<td>En Curso</td>";
+		}
+		elseif ($fila["habilitado"] == 2 && in_array($_SESSION['id'], array(0,1,6,10,23,26,30,41,49,50,59,66,73,74,75,78,86,89,90,93,96,101,146,159))) {
+				echo "<td><a href='proceso.php?proceso_id=".$fila['id']."'>". $fila["nombre"] ."</a></td>";
+				echo "<td>Habilitado Especialmente</td>";
 		}
 		else {
 			echo "<td>". $fila["nombre"] ."</a></td>";

@@ -34,6 +34,7 @@ $evalind = "INSERT INTO `evaluaciones_ind`(`tipo_id`, `meta_id`,`indicador_id`, 
                     AND indicadores.id = indicador_cargos.indicador_id
                     AND proc_ind.proceso_id = $id
                     AND indicador_cargos.indicador_id = proc_ind.indicador_id";
+/*AUTOEVAL*/
 $evalcomp1 = "INSERT INTO `evaluaciones_comp`(`tipo_id`, `competencia_id`, `criterio_id`, `evaluado_id`,
                           `cargo_id`, `ciclo_id`, `asignatura_id`, `evaluador_id`, `cargo_sup`, `ciclo_sup`, `asignatura_sup`,`proceso_id`)
                   SELECT 1, comp_perfiles.competencia_id, comp_crit.criterio_id, opinantes.evaluado_id,
@@ -45,6 +46,7 @@ $evalcomp1 = "INSERT INTO `evaluaciones_comp`(`tipo_id`, `competencia_id`, `crit
                      AND comp_perfiles.competencia_id = comp_crit.competencia_id
                      AND proc_comp.proceso_id = $id
                      AND comp_perfiles.competencia_id = proc_comp.competencia_id";
+/*SUPERIOR*/
 $evalcomp2 = "INSERT INTO `evaluaciones_comp`(`tipo_id`, `competencia_id`, `criterio_id`, `evaluado_id`,
                           `cargo_id`, `ciclo_id`, `asignatura_id`, `evaluador_id`, `cargo_sup`, `ciclo_sup`, `asignatura_sup`,`proceso_id`)
                   SELECT 2, comp_perfiles.competencia_id, comp_crit.criterio_id, opinantes.evaluado_id,
@@ -56,6 +58,7 @@ $evalcomp2 = "INSERT INTO `evaluaciones_comp`(`tipo_id`, `competencia_id`, `crit
                      AND comp_perfiles.competencia_id = comp_crit.competencia_id
                      AND proc_comp.proceso_id = $id
                      AND comp_perfiles.competencia_id = proc_comp.competencia_id";
+/*COLAB*/
 $evalcomp3 = "INSERT INTO `evaluaciones_comp`(`tipo_id`, `competencia_id`, `criterio_id`, `evaluado_id`,
                           `cargo_id`, `ciclo_id`, `asignatura_id`, `evaluador_id`, `cargo_sup`, `ciclo_sup`, `asignatura_sup`,`proceso_id`)
                   SELECT 3, comp_perfiles.competencia_id, comp_crit.criterio_id, opinantes.evaluado_id,
