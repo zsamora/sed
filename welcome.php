@@ -13,6 +13,19 @@ $procesos = "SELECT DISTINCT  id, nombre, finicio, ftermino, habilitado
 											 	 AND usuario_id = $id
 									  ORDER BY id DESC";
 $proc_result = $conn->query($procesos);
+$pendientes = "SELECT id
+								 FROM (SELECT (SELECT COUNT(*) FROM resultados_comp WHERE evaluacion_id IN (SELECT id FROM evaluaciones_comp WHERE evaluador_id = usuarios.id)) AS res,
+								 							(SELECT COUNT(*) FROM evaluaciones_comp WHERE evaluador_id = usuarios.id AND proceso_id = 2) AS eval, usuarios.id as id
+												 FROM usuarios) AS tablares
+												WHERE eval!= res AND eval != 0";
+$pendientes_result = $conn->query($pendientes);
+$hab_esp = 0;
+while($row = $pendientes_result->fetch_assoc())
+{
+	if ($id == $row["id"]) {
+		$hab_esp = 1;
+	}
+}
 include('navbar.php');
 ?>
 <div class="container">
@@ -38,7 +51,7 @@ include('navbar.php');
 				echo "<td><a href='proceso.php?proceso_id=".$fila['id']."'>". $fila["nombre"] ."</a></td>";
 				echo "<td>En Curso</td>";
 		}
-		elseif ($fila["habilitado"] == 2 && in_array($_SESSION['id'], array(0,1,6,10,23,26,30,41,49,50,59,66,73,74,75,78,86,89,90,93,96,101,146,159))) {
+		elseif ($fila["habilitado"] == 2 && ($hab_esp || $_SESSION['id'] == 1 || $_SESSION['id'] == 0 || $_SESSION['id'] == 63)) {
 				echo "<td><a href='proceso.php?proceso_id=".$fila['id']."'>". $fila["nombre"] ."</a></td>";
 				echo "<td>Habilitado Especialmente</td>";
 		}
