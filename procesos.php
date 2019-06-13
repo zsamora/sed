@@ -76,6 +76,7 @@ $procesos = "SELECT procesos.id as p_id, procesos.nombre as p_nombre, finicio, f
                FROM procesos, establecimiento
 							WHERE procesos.establecimiento_id = establecimiento.id
 								AND habilitado = 1
+								 OR habilitado = 2
 					 ORDER BY p_id";
 $proc_result = $conn->query($procesos) or die ("database error:".$conn->error);
 ?>
@@ -162,6 +163,9 @@ $proc_result = $conn->query($procesos) or die ("database error:".$conn->error);
 						<ul class="dropdown-menu" role="menu">
 							<li>
 								<?php echo "<li><a href='habilitar2.php?id=" . $fila["p_id"]. "'>Habilitar</a></li>"?>
+							</li>
+							<li>
+								<?php echo "<li><a href='habilitar3.php?id=" . $fila["p_id"]. "'>Habilitar Especialmente</a></li>"?>
 							</li>
 							<li>
 								<?php echo "<li><a href='eliminar6.php?id_el=" . $fila["p_id"]. "'>Eliminar</a></li>"?>
