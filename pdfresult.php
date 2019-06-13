@@ -650,7 +650,7 @@ $html.='
 					$crit_result = $conn->query($crit) or die ("database error:". $conn->error);
 					while ($fila_crit = $crit_result->fetch_assoc()){
 						$criterio = $fila_crit["id"];
-						$html.='<p class="criterio">Criterio N°'.$fila_crit["id"].': </p>';
+						$html.='<div class="container-relative"><p class="criterio">Criterio N°'.$fila_crit["id"].': </p>';
 						$html.='<p class="descripcion">'.$fila_crit["descr"].' ('.$fila_crit["ponderacion"].'%)</p>';
 					// Resultados por tipo encuesta
 					$autoeval = "SELECT ROUND(SUM(valor) / COUNT(valor),2) as resultado
@@ -770,6 +770,7 @@ $html.='
 								}
 						$html.='</tbody>
 										</table>
+										</div>
 										<br><br><br><br><br><br><br>';
 						}
 				}
@@ -1403,7 +1404,7 @@ $html.='
 					      <td>Total</td>
 					      <td>100%</td>
 					      <td>".$resultadox."%</td>";
-					      if ($resultadox) { $html.="<td>1</td>";}
+					      if ($resultadox <= 33.33) { $html.="<td>1</td>";}
 					      elseif ($resultadox <= 66.67) { $html.="<td>2</td>";}
 					      elseif ($resultadox <= 100.00) { $html.="<td>3</td>";}
 					      else { $html.="<td>4</td>"; }

@@ -57,7 +57,7 @@ include('navbar.php');
 				echo "<td><a href='proceso.php?proceso_id=".$fila['id']."'>". $fila["nombre"] ."</a></td>";
 				echo "<td>En Curso</td>";
 		}
-		elseif ($fila["habilitado"] == 2 && ($hab_esp || in_array($_SESSION['id'],array(0,1,149)))) {
+		elseif ($fila["habilitado"] == 2 && ($hab_esp || in_array($_SESSION['id'],array(0,1,41,152,101,149,49)))) {
 				echo "<td><a href='proceso.php?proceso_id=".$fila['id']."'>". $fila["nombre"] ."</a></td>";
 				echo "<td>Habilitado Especialmente</td>";
 		}
